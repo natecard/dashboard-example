@@ -1,17 +1,17 @@
+import React from "react";
 import { User } from "../Interfaces";
 
 export default function UserInfo(props: User) {
-    return (
-        <table>
-        <tr>
-            <th>{props.Account}</th>
-            <th>{props.Client}</th>
-            <th>{props.Title}</th>
-            <th>{props.Email}</th>
-            <th>{props.Phone}</th>
-            <th>{props.Company}</th>
-            <th>{props.Industry}</th>
-        </tr>
-    </table>
-    )
+  return (
+    <tr key={props.id}>
+      <td>{props.account}</td>
+      <td>{props.firstName}</td>
+      <td>{props.lastName}</td>
+      <td>{props.title}</td>
+      <td>{props.email}</td>
+      <td>{props.phone}</td>
+      <td>{props.company}</td>
+      <td>{props.industry}</td>
+    </tr>
+  );
 }

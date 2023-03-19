@@ -1,9 +1,11 @@
 export interface User {
-    Account: string,
-    Client: string,
-    Title: string,
-    Email: string,
-    Phone: number, 
-    Company: string,
-    Industry: string,
+    id: string,
+    account: string,
+    firstName: string,
+    lastName: string,
+    title: string,
+    email: string,
+    phone: string, 
+    company: string,
+    industry: string,
 }

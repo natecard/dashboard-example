@@ -1,15 +1,6 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "./tsconfig.json",
-    "plugin:@typescript-eslint/recommended"
-  ],
+  "extends": ["./tsconfig.json"],
   "root": true,
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": "./tsconfig.json",
-    "tsconfigRootDir": "__dirname"
-  },
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
@@ -17,6 +8,7 @@
     "strictNullChecks": true,
     "strictFunctionTypes": true
   },
+  "include": ["./src", "./public"],
   "exclude": ["node_modules", "dist"],
   "plugins": ["@typescript-eslint"]
 }

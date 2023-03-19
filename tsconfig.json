@@ -4,11 +4,7 @@
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
     "module": "ES2022",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
@@ -16,7 +12,7 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", ".eslintrc.json", "vite-env.d.ts"],
+  "include": ["src", ".eslintrc.js", "vite-env.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }],
   "extends": "./node_modules/@tsconfig/recommended/tsconfig.json"
 }

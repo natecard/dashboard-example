@@ -1,11 +1,10 @@
-import React, { ReactNode } from "react";
-import "./App.css";
+import React, { useState, useEffect } from "react";
 import { faker } from "@faker-js/faker/locale/en_CA";
-import TableHeader from "./Components/TableHeader";
 import UserInfo from "./Components/UserInfo";
 import { User } from "./Interfaces";
 
 function App() {
+  const [usersList, setUsersList] = useState<User[]>([]);
   function createUser(): User {
     const firstName = faker.name.firstName();
     const lastName = faker.name.lastName();
@@ -27,7 +26,10 @@ function App() {
     let user = createUser();
     usersArray.push(user);
   }
-  const usersElements: any = usersArray.map((user) => {
+  useEffect(() => {
+    setUsersList(usersArray);
+  }, []);
+  const usersElements: any = usersList.map((user) => {
     return (
       <UserInfo
         account={user.account}
@@ -38,6 +40,7 @@ function App() {
         phone={user.phone}
         company={user.company}
         industry={user.industry}
+        key={user.id}
         id={user.id}
       />
     );
@@ -45,21 +48,23 @@ function App() {
   return (
     <div>
       <h1>Header</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Account #</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Title</th>
-            <th>Email</th>
-            <th>Phone Number</th>
-            <th>Company Name</th>
-            <th>Industry</th>
-          </tr>
-        </thead>
-        <tbody>{usersElements}</tbody>
-      </table>
+      <div className="table-wrapper">
+        <table className="table">
+          <thead className="table-headrow">
+            <tr>
+              <th className="col-1">Account #</th>
+              <th className="col-2">First Name</th>
+              <th className="col-3">Last Name</th>
+              <th className="col-4">Title</th>
+              <th className="col-5">Email</th>
+              <th className="col-6">Phone Number</th>
+              <th className="col-7">Company Name</th>
+              <th className="col-8">Industry</th>
+            </tr>
+          </thead>
+          <tbody>{usersElements}</tbody>
+        </table>
+      </div>
     </div>
   );
 }

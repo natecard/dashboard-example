@@ -3,38 +3,38 @@ import { User } from "../Interfaces";
 
 export default function TailwindTable(props: User) {
   return (
-    <tr key={props.id} className="table-row">
-      <td className="col-1">
+    <tr key={props.id} className="">
+      <td className="">
         {props.account}
-        <div className="line"></div>
+        <div className=""></div>
       </td>
-      <td className="col-2">
+      <td className="">
         {props.firstName}
-        <div className="line"></div>
+        <div className=""></div>
       </td>
-      <td className="col-3">
+      <td className="">
         {props.lastName}
-        <div className="line"></div>
+        <div className=""></div>
       </td>
-      <td className="col-4">
+      <td className="">
         {props.title}
-        <div className="line"></div>
+        <div className=""></div>
       </td>
-      <td className="col-5">
+      <td className="">
         {props.email}
-        <div className="line"></div>
+        <div className=""></div>
       </td>
-      <td className="col-6">
+      <td className="">
         {props.phone}
-        <div className="line"></div>
+        <div className=""></div>
       </td>
-      <td className="col-7">
+      <td className="">
         {props.company}
-        <div className="line"></div>
+        <div className=""></div>
       </td>
-      <td className="col-8">
+      <td className="">
         {props.industry}
-        <div className="line"></div>
+        <div className=""></div>
       </td>
     </tr>
   );

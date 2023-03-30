@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { faker } from "@faker-js/faker/locale/en_CA";
-import UserInfo from "./Components/UserInfo";
+import CSSTable from "./CSSComponents/Table";
 import { User } from "./Interfaces";
+import TableHeader from "./CSSComponents/TableHeader";
 
 function App() {
   const [usersList, setUsersList] = useState<User[]>([]);
@@ -31,7 +32,7 @@ function App() {
   }, []);
   const usersElements: any = usersList.map((user) => {
     return (
-      <UserInfo
+      <CSSTable
         account={user.account}
         firstName={user.firstName}
         lastName={user.lastName}
@@ -47,21 +48,10 @@ function App() {
   });
   return (
     <div>
-      <h1>Header</h1>
+      <h1>CSS Table</h1>
       <div className="table-wrapper">
         <table className="table">
-          <thead className="table-headrow">
-            <tr>
-              <th className="col-1">Account #</th>
-              <th className="col-2">First Name</th>
-              <th className="col-3">Last Name</th>
-              <th className="col-4">Title</th>
-              <th className="col-5">Email</th>
-              <th className="col-6">Phone Number</th>
-              <th className="col-7">Company Name</th>
-              <th className="col-8">Industry</th>
-            </tr>
-          </thead>
+          <TableHeader />
           <tbody>{usersElements}</tbody>
         </table>
       </div>

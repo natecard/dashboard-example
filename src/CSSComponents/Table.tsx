@@ -1,7 +1,7 @@
 import React from "react";
 import { User } from "../Interfaces";
 
-export default function UserInfo(props: User) {
+export default function CSSTable(props: User) {
   return (
     <tr key={props.id} className="table-row">
       <td className="col-1">
